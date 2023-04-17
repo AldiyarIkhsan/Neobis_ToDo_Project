@@ -17,6 +17,9 @@
 {% for todo in todo_list %}
 <div class="ui segment">
     <p class="ui big header">№{{ todo.id }} {{ todo.title }}</p>
+    <p class="ui small header">Description: {{ todo.description }}</p>
+    <p class="ui small header">Opened date: {{ todo.created_date }}</p>
+    <p class="ui small header">Last date: {{ todo.due_date }}</p>
 
     {% if todo.is_complete == False %}
     <span class="ui gray label">Не завершено</span>
@@ -26,8 +29,10 @@
     <a class="ui blue button" href="{% url 'update' todo_id=todo.id %}">Открыть</a>
     {% endif %}
     <a class="ui negative basic button" href="{% url 'delete' todo_id=todo.id %}">Удалить</a>
+    <a class="ui positive basic button" href="{% url 'edit' todo_id=todo.id %}">Редактировать</a>
 </div>
 {% endfor %}
 </div>
 
 {% endblock content %}
+
