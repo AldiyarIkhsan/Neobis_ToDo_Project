@@ -4,6 +4,8 @@
 
 <div style="margin-top: 50px;" class="ui container">
     <h1 class="ui center aligned header">Мой менеджер задач</h1>
+    <a href="?order_by=created_date"> Ordering </a>
+    <a href="?order_by=-created_date"> Ordering Desc</a>
     <h3 class="test_style">Управляй своим временем!</h3>
     <form class="ui form" action="{% url 'add' %}" method="post">
         {% csrf_token %}
